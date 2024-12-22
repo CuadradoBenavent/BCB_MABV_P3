@@ -35,7 +35,7 @@ void free_2d(double** a) {
 
 
 int main() {
-  const char* filename = "input.txt";
+  const char* filename = "inp.txt";
   FILE* file = fopen(filename, "r");
   if (file == NULL) {
     perror("Failed to open file");
