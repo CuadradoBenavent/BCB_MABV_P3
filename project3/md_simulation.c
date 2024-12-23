@@ -199,7 +199,7 @@ int main() {
   double epsilon = 0.0661;
   double sigma = 0.3345;
   double total_V = V(epsilon, sigma, Natoms, distance);
-  printf("Total potential energy: %lf J/mol\n", total_V);
+  printf("\nTotal potential energy: %lf J/mol\n", total_V);
 
   //Compute and print kinetic energy
   double** velocity = malloc_2d(Natoms, 3);
@@ -229,15 +229,41 @@ int main() {
     return 1;
   }
   compute_acc(Natoms, coord, mass, distance, acceleration, epsilon, sigma);
-  printf("\nAccelerations:\n");
-  for (size_t i = 0; i < Natoms; i++) {
-    for (size_t j = 0; j < 3; j++) {
-      printf("%lf ", acceleration[i][j]);  // %lf to print double
-    }
-    printf("\n"); // to print new line for each row
-  }
   
-
+  //Verlet algorithm
+  double dt = 0.2;
+  size_t nsteps = 1000;
+  printf("\n\n*****Beginning molecular dynamics simulation based on the Verlet algorithm*****\n\n");
+  for (size_t n = 0; n < nsteps; n++){
+    for (size_t i = 0; i < Natoms; i++){
+      for (size_t j = 0; j < 3; j++){
+        coord[i][j] += velocity[i][j] * dt + acceleration[i][j] * pow(dt, 2) / 2.0;  // coord update
+        velocity[i][j] += 0.5 * acceleration[i][j] * dt;
+      }
+    }
+    compute_distances(Natoms, coord, distance); //a^n
+    compute_acc(Natoms, coord, mass, distance, acceleration, epsilon, sigma);
+    for (size_t i = 0; i < Natoms; i++){
+      for (size_t j = 0; j < 3; j++){
+        velocity[i][j] += 0.5 * acceleration[i][j] * dt;  //a^n+1
+      }
+    }
+    double total_V = V(epsilon, sigma, Natoms, distance);
+    double total_T = T(Natoms, velocity, mass);
+    double total_E = E(total_V, total_T);
+   
+    printf("\nIteration: %zu", n+1);  // to print starting at 1
+    printf("\nEnergies: \n   Potential %lf J/mol", total_V);
+    printf("\n   Kinetic %lf J/mol", total_T);
+    printf("\n   Total %lf J/mol", total_E);
+    printf("\nCoordinates:\n");
+    for (size_t i = 0; i < Natoms; i++) {
+      for (size_t j = 0; j < 3; j++) {
+        printf("%lf ", coord[i][j]);  // %lf to print double
+      } 
+    printf("\n"); 
+    }
+  }
 
   // Free allocated memory
   free_2d(coord);
