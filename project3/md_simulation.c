@@ -3,6 +3,7 @@
 #include <math.h>
 
 
+//Functio to allocate 2D arrays
 double** malloc_2d(size_t m, size_t n) {
  
   // Allocate an array of double pointers with size m
@@ -27,28 +28,29 @@ double** malloc_2d(size_t m, size_t n) {
   return a;
 }
 
-void free_2d(double** a) {
-  free(a[0]);
-  a[0] = NULL;
+// Function to free 2D arrays
+void free_2d(double** a) {  // void to define function that does not return a value
+  free(a[0]); // free when not used anymore
+  a[0] = NULL; // set freed pointer to NULL
   free(a);
 }
 
 
 //Function to read the number of atoms from xyz file
 size_t read_Natoms(FILE* input_file) {
-  size_t Natoms;
-  if (fscanf(input_file, "%zu", &Natoms) != 1) {
-    fprintf(stderr, "Failed to read the number of atoms\n");
-    exit(1);
+  size_t Natoms;  // declare variable of type size_t
+  if (fscanf(input_file, "%zu", &Natoms) != 1) { // %zu for size_t values
+    fprintf(stderr, "Failed to read the number of atoms\n");  // prints error if no first line found with 1 element
+    exit(1);  // terminates program if error exists
   }
-  return Natoms;
+  return Natoms;  // reads only first line and pointer at end
 }
 
 
-// Function to read the molecule data
+// Function to read the molecule data (starts reading at second line)
 void read_molecule(FILE* input_file, size_t Natoms, double** coord, double* mass) {
-  for (size_t i = 0; i < Natoms; i++) {
-    if (fscanf(input_file, "%lf %lf %lf %lf", &coord[i][0], &coord[i][1], &coord[i][2], &mass[i]) != 4) {
+  for (size_t i = 0; i < Natoms; i++) {  // iterating over all lines (except first)
+    if (fscanf(input_file, "%lf %lf %lf %lf", &coord[i][0], &coord[i][1], &coord[i][2], &mass[i]) != 4) {  // checks for errors if line has more or less that 4 columns
       fprintf(stderr, "Failed to read data for atom %zu\n", i);
       exit(1);
     }
@@ -93,29 +95,34 @@ double V(double epsilon, double sigma, size_t Natoms, double** distance) {
 
 int main() {
   const char* filename = "inp.txt";
-  FILE* file = fopen(filename, "r");
-  if (file == NULL) {
-    perror("Failed to open file");
-    return 1;
+  FILE* input_file = fopen(filename, "r");  // open inp.txt for reading
+  if (input_file == NULL) {
+    printf("Failed to open file");
+    return 1;  // exit with error if no file found
   }
+  printf("Molecule data from %s:\n", filename);
 
   //Read the number of atoms
-  size_t Natoms = read_Natoms(file); 
+  size_t Natoms = read_Natoms(input_file); 
   printf("Number of atoms: %zu\n", Natoms);
 
 
   //Allocate memory for coords and masses
-  double** coord = malloc_2d(Natoms, 3);
-  double* mass = malloc(Natoms * sizeof(double));
+  double** coord = malloc_2d(Natoms, 3);  // 3 coordinates per atom
+  double* mass = malloc(Natoms * sizeof(double));  // 1 mass per atom
   if (coord == NULL || mass == NULL) {
     fprintf(stderr, "Memory allocation failed\n");
-    fclose(file);
+    fclose(input_file);
     return 1;
   }
-
+  
   //Read molecule data
-  read_molecule(file, Natoms, coord, mass);
-  fclose(file);
+  read_molecule(input_file, Natoms, coord, mass);
+  for (size_t i = 0; i < Natoms; i++) {
+    printf("Atom %zu: x = %.1lf, y = %.1lf, z = %.1lf, mass = %.3lf\n", i + 1, coord[i][0], coord[i][1], coord[i][2], mass[i]);
+  }
+
+  fclose(input_file);
 
 
   //Calculate interatomic distances
@@ -142,15 +149,6 @@ int main() {
   double total_potential = V(epsilon, sigma, Natoms, distance);
   printf("Total potential energy: %lf J/mol\n", total_potential);
 
-
-
-
-
-  //Print data
-  printf("Molecule data from %s:\n", filename);
-  for (size_t i = 0; i < Natoms; i++) {
-    printf("Atom %zu; X=%lf Y=%lf Z=%lf mass=%lf \n", i + 1, coord[i][0], coord[i][1], coord[i][2], mass[i]);
-  }
 
 
 
