@@ -34,6 +34,42 @@ void free_2d(double** a) {
 }
 
 
+//Function to read the number of atoms from xyz file
+size_t read_Natoms(FILE* input_file) {
+  size_t Natoms;
+  if (fscanf(input_file, "%zu", &Natoms) != 1) {
+    fprintf(stderr, "Failed to read the number of atoms\n");
+    exit(1);
+  }
+  return Natoms;
+}
+
+
+// Function to read the molecule data
+void read_molecule(FILE* input_file, size_t Natoms, double** coord, double* mass) {
+  for (size_t i = 0; i < Natoms; i++) {
+    if (fscanf(input_file, "%lf %lf %lf %lf", &coord[i][0], &coord[i][1], &coord[i][2], &mass[i]) != 4) {
+      fprintf(stderr, "Failed to read data for atom %zu\n", i);
+      exit(1);
+    }
+  }
+}
+
+ 
+//Define a function to compute the interatomic distances
+void compute_distances(size_t Natoms, double** coord, double** distance) {
+  for (size_t i = 0; i < Natoms; i++) {
+    for (size_t j = 0; j < Natoms; j++) {
+      //Compute distances between atoms i and j
+      double dx = coord[i][0] - coord[j][0];
+      double dy = coord[i][1] - coord[j][1];
+      double dz = coord[i][2] - coord[j][2];
+      distance[i][j] = sqrt(dx * dx + dy * dy + dz * dz);
+    }
+  }
+}
+
+
 int main() {
   const char* filename = "inp.txt";
   FILE* file = fopen(filename, "r");
@@ -42,49 +78,59 @@ int main() {
     return 1;
   }
 
+  //Read the number of atoms
+  size_t Natoms = read_Natoms(file);
+  printf("Number of atoms: %zu\n", Natoms);
 
-  //Read the number of rows
-  size_t rows;
-  if (fscanf(file, "%zu", &rows) != 1) {
-    fprintf(stderr, "Failed to read the number of rows\n");
+
+  //Allocate memory for coords and masses
+  double** coord = malloc_2d(Natoms, 3);
+  double* mass = malloc(Natoms * sizeof(double));
+  if (coord == NULL || mass == NULL) {
+    fprintf(stderr, "Memory allocation failed\n");
     fclose(file);
     return 1;
   }
 
-  //Number of columns (fixed for this example)
-  size_t cols = 4;
-
-  //Allocate the 2D array
-  double** array = malloc_2d(rows,cols);
-  if (array == NULL) {
-    fprintf(stderr, "Memory allocated failed\n");
-    fclose(file);
-    return 1;
-  }
-
-
-  //Read the data into the array
-  for (size_t i=0; i < rows; i++) {
-    if (fscanf(file, "%lf %lf %lf %lf", &array[i][0], &array[i][1], &array[i][2], &array[i][3]) != 4) {
-      fprintf(stderr, "Failed to read data for row %zu\n", i);
-      free_2d(array);
-      fclose(file);
-      return 1;
-    }
-  }
-
+  //Read molecule data
+  read_molecule(file, Natoms, coord, mass);
   fclose(file);
 
 
-  //Print the data 
-  printf("Read data from %s:\n", filename);
-  for (size_t i=0; i < rows; i++) {
-    printf("Row %zu: %lf %lf %lf %lf\n", i, array[i][0], array[i][1], array[i][2], array[i][3]);
+  //Calculate interatomic distances
+  double** distance = malloc_2d(Natoms, Natoms);
+  if (distance == NULL) {
+    fprintf(stderr, "Memory allocation for distance array has failed\n");
+    free_2d(coord);
+    free(mass);
+    return 1;
   }
 
 
+  //Compute and print the distances
+  compute_distances(Natoms, coord, distance);
+  printf("\nInternuclear distances:\n");
+  for (size_t i = 0; i < Natoms; i++) {
+    for (size_t j = 0; j < Natoms; j++) {
+      printf("Interatomic distance[%zu][%zu] = %lf\n", i, j, distance[i][j]);
+    }
+  }
+
+
+
+
+  //Print data
+  printf("Molecule data from %s:\n", filename);
+  for (size_t i = 0; i < Natoms; i++) {
+    printf("Atom %zu; X=%lf Y=%lf Z=%lf mass=%lf \n", i + 1, coord[i][0], coord[i][1], coord[i][2], mass[i]);
+  }
+
+
+
   // Free allocated memory
-  free_2d(array);
+  free_2d(coord);
+  free_2d(distance);
+  free(mass);
 
   return 0;
 }
