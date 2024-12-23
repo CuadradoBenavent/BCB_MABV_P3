@@ -108,7 +108,6 @@ double T(size_t Natoms, double** velocity,double* mass){
 }
 
 
-
 // Define a function to calculate total energy
 double E(double V, double T){
   double total_E = V + T;
@@ -116,7 +115,32 @@ double E(double V, double T){
 
 }
 
-
+// Define a function to compute the acceleration
+void compute_acc(size_t Natoms, double** coord, double* mass, double** distance, double** acceleration, double epsilon, double sigma){
+	for (size_t i = 0; i < Natoms; i++){
+	  double axi = 0.0;
+	  double ayi = 0.0;
+	  double azi = 0.0;
+	  for (size_t j = 0; j < Natoms; j++) { // Include all other atoms
+            if (i != j) { // Exclude self-interaction
+              double r = distance[i][j];
+	      if (r>0){
+                double sigma_r = sigma/r;
+      	        double sigma_r6 = pow(sigma_r, 6);
+      	        double sigma_r12 = pow(sigma_r, 12);
+      	        double U = 24.0 * epsilon / r * (sigma_r6 - 2.0 * sigma_r12);
+                axi -= (1 / mass[i] * U * ( coord[i][0] - coord[j][0]) / r); 
+                ayi -= (1 / mass[i] * U * ( coord[i][1] - coord[j][1]) / r);
+                azi -= (1 / mass[i] * U * ( coord[i][2] - coord[j][2]) / r);
+	      }
+	    }
+	  }
+	  acceleration[i][0] = axi;
+	  acceleration[i][1] = ayi; 
+	  acceleration[i][2] = azi; 
+	}
+}
+	     
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -192,11 +216,35 @@ int main() {
   double total_E = E(total_V, total_T);
   printf("Total energy: %lf J/mol\n", total_E);
 
+
+
+  //Compute acceleration
+  double** acceleration = malloc_2d(Natoms, 3);
+  if (acceleration == NULL) {
+    fprintf(stderr, "Memory allocation for acceleration array has failed\n");
+    free_2d(coord);
+    free_2d(distance);
+    free(mass);
+    free_2d(velocity);
+    return 1;
+  }
+  compute_acc(Natoms, coord, mass, distance, acceleration, epsilon, sigma);
+  printf("\nAccelerations:\n");
+  for (size_t i = 0; i < Natoms; i++) {
+    for (size_t j = 0; j < 3; j++) {
+      printf("%lf ", acceleration[i][j]);  // %lf to print double
+    }
+    printf("\n"); // to print new line for each row
+  }
+  
+
+
   // Free allocated memory
   free_2d(coord);
   free_2d(distance);
   free(mass);
-  free(velocity);
+  free_2d(velocity);
+  free_2d(acceleration);
 
   return 0;
 }
