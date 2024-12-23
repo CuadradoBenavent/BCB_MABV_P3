@@ -70,6 +70,27 @@ void compute_distances(size_t Natoms, double** coord, double** distance) {
 }
 
 
+//Define a function to calculate the Lennard-Jones potential
+double V(double epsilon, double sigma, size_t Natoms, double** distance) {
+  double total_potential_energy = 0.0;
+  for (size_t i = 0; i < Natoms; i++) {
+    for (size_t j = i + 1; j < Natoms; j++) {
+      double r = distance[i][j];
+      if (r > 0) {
+        double sigma_r = sigma/r;
+	double sigma_r6 = pow(sigma_r, 6);
+	double sigma_r12 = pow(sigma_r, 12);
+	double VLJ = 4.0 * epsilon * (sigma_r12 - sigma_r6);
+	total_potential_energy += VLJ;
+      }
+    }
+  }
+
+  return total_potential_energy;
+}
+
+
+
 int main() {
   const char* filename = "inp.txt";
   FILE* file = fopen(filename, "r");
@@ -79,7 +100,7 @@ int main() {
   }
 
   //Read the number of atoms
-  size_t Natoms = read_Natoms(file);
+  size_t Natoms = read_Natoms(file); 
   printf("Number of atoms: %zu\n", Natoms);
 
 
@@ -115,6 +136,12 @@ int main() {
       printf("Interatomic distance[%zu][%zu] = %lf\n", i, j, distance[i][j]);
     }
   }
+
+  double epsilon = 0.0661;
+  double sigma = 0.3345;
+  double total_potential = V(epsilon, sigma, Natoms, distance);
+  printf("Total potential energy: %lf J/mol\n", total_potential);
+
 
 
 
