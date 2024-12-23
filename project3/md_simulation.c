@@ -91,7 +91,34 @@ double V(double epsilon, double sigma, size_t Natoms, double** distance) {
   return total_potential_energy;
 }
 
+// Define a function to calculate kinetic energy
+double T(size_t Natoms, double** velocity,double* mass){
+ double total_kinetic_energy = 0.0;
+ for (size_t i = 0; i < Natoms; i++){
+   double velocity_squared = 0.0;
+   for (size_t j = 0; j < 3; j++) {
+	   velocity_squared += pow(velocity[i][j], 2);  // vix^2 + viy^2 + viz^2 
+   }
+   double T = mass[i] * velocity_squared;
+   total_kinetic_energy += T;
+ }
+ total_kinetic_energy *= 0.5;   
+ return total_kinetic_energy;
 
+}
+
+
+
+// Define a function to calculate total energy
+double E(double V, double T){
+  double total_E = V + T;
+  return total_E;
+
+}
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////
 
 int main() {
   const char* filename = "inp.txt";
@@ -140,22 +167,36 @@ int main() {
   printf("\nInternuclear distances:\n");
   for (size_t i = 0; i < Natoms; i++) {
     for (size_t j = 0; j < Natoms; j++) {
-      printf("Interatomic distance[%zu][%zu] = %lf\n", i, j, distance[i][j]);
+      printf("Interatomic distance[%zu][%zu] = %lf\n", i, j, distance[i][j]);  // %lf to print double
     }
   }
 
+  //Compute and print LJ potential energy
   double epsilon = 0.0661;
   double sigma = 0.3345;
-  double total_potential = V(epsilon, sigma, Natoms, distance);
-  printf("Total potential energy: %lf J/mol\n", total_potential);
+  double total_V = V(epsilon, sigma, Natoms, distance);
+  printf("Total potential energy: %lf J/mol\n", total_V);
 
+  //Compute and print kinetic energy
+  double** velocity = malloc_2d(Natoms, 3);
+  for (size_t i = 0; i < Natoms; i++) {
+    for (size_t j = 0; j < 3; j++){
+      velocity[i][j] = 0.0;
+    }
+  }  // initialize velocities to 0
+  double total_T = T(Natoms, velocity, mass);
+  printf("Total kinetic energy: %lf J/mol\n", total_T);
+  
 
-
+  //Compute and print total energy
+  double total_E = E(total_V, total_T);
+  printf("Total energy: %lf J/mol\n", total_E);
 
   // Free allocated memory
   free_2d(coord);
   free_2d(distance);
   free(mass);
+  free(velocity);
 
   return 0;
 }
