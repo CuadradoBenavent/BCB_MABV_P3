@@ -3,62 +3,78 @@
 #include <math.h>
 
 
-double** malloc_2d(size_t m, size_t n) {
-  double** a = malloc(m*sizeof(double*)); // double pointers of size m
-  if (a == NULL) {
+double** malloc_2d(size_t m, size_t n) {  // ** pointer to a pointer
+  
+  // Allocate an array of double pointers with size m
+  double** a = malloc(m*sizeof(double*)); // request m double pointers
+  if (a == NULL) {  // to check that the allocation ok
     return NULL;
   }
-
-  a[0] = malloc(n*m*sizeof(double));  //contiguous block of memory 
+  
+  // Allocate a contiguous block of memory for the 2D array elements
+  a[0] = malloc(n*m*sizeof(double));  // to store the first element of the 2D array 
   if (a[0] == NULL) {
     free(a);
     return NULL;
   }
 
-  for (size_t i=1 ; i<m ; i++) {  
-    a[i] = a[i-1]+n;  // for pointers of array to point to correct location
-  }
-  return a;
+  // Set the pointers in the array of double pointers
+  // to point to the correct locations
+  for (size_t i=1 ; i<m ; i++) {  // initialize array
+    a[i] = a[i-1]+n;
   }
 
+  return a;
+}
+
 void free_2d(double** a) {
-  free(a[0]);
-  a[0] = NULL;
+  free(a[0]);  // free when not used anymore
+  a[0] = NULL;  // set freed pointer to NULL
   free(a);
 }
 
 
+size_t read_Natoms(FILE* input_file){
+    size_t Natoms;
+    fscanf(input_file, "%zu", &Natoms);  //%zu for size_t values 
+    return Natoms;
+}
+
+
+void read_molecule(FILE* input_file, size_t Natoms, double** coord, double* mass){ // void to define function that does not return a value 
+
+	for (size_t i = 0; i < Natoms; i++) {
+        	fscanf(input_file, "%lf %lf %lf %lf", &coord[i][0], &coord[i][1], &coord[i][2], &mass[i]);
+	}
+}
+	
 
 int main(){
-    size_t m = 3, n = 4;
-    // Allocate a 3x4 matrix
-    double** matrix = malloc_2d(m, n);
 
-    if (matrix == NULL) {
-        printf("Memory allocation failed!\n");
-        return 1;
+    FILE* input_file = fopen("inp.txt", "r"); // Open input.txt for reading
+    if (input_file == NULL) {
+        printf("Error opening input file for reading");
+        exit(-1);
     }
 
-    // Set values to test the matrix
-    // Filling the matrix with some values for testing
-    for (size_t i = 0; i < m; i++) {
-        for (size_t j = 0; j < n; j++) {
-            matrix[i][j] = (i * n) + j;  // Just an example of filling values
-        }
+     size_t Natoms = read_Natoms(input_file);
+     // Allocate memory for coordinates and masses
+     double** coord = malloc_2d(Natoms, 3);  // 3 coordinates per atom
+     double* mass = malloc(Natoms * sizeof(double));  // 1 mass per atom
+     read_molecule(input_file, Natoms, coord, mass);
+
+     // Print the read data for verification
+    printf("Number fo atoms: %zu \n", Natoms);
+    for (size_t i = 0; i < Natoms; i++) {
+        printf("Atom %zu: x = %.1lf, y = %.1lf, z = %.1lf, mass = %.3lf\n",
+               i + 1, coord[i][0], coord[i][1], coord[i][2], mass[i]);
     }
 
-    // Print the matrix
-    printf("3x4 Matrix:\n");
-    for (size_t i = 0; i < m; i++) {
-        for (size_t j = 0; j < n; j++) {
-            printf("%f ", matrix[i][j]);  // Print the values in the matrix
-        }
-        printf("\n");
-    }
+    // Free allocated memory
+    free_2d(coord);
+    free(mass);
 
-    // Free the allocated memory
-    free_2d(matrix);
-
+    fclose(input_file);
     return 0;
 
 
