@@ -140,6 +140,16 @@ void compute_acc(size_t Natoms, double** coord, double* mass, double** distance,
 	  acceleration[i][2] = azi; 
 	}
 }
+
+
+
+void write_xyz(FILE* output_file, size_t Natoms, double** coord, double potential_energy, double kinetic_energy, double total_energy) {
+  fprintf(output_file, "%zu\n", Natoms);
+  fprintf(output_file, "Potential Energy: %lf, Kinetic Energy: %lf, Total Energy: %lf\n", potential_energy, kinetic_energy, total_energy);
+  for (size_t i = 0; i < Natoms; i++) {
+    fprintf(output_file, "Ar %lf %lf %lf\n", coord[i][0], coord[i][1], coord[i][2]);
+  }
+}
 	     
 
 /////////////////////////////////////////////////////////////////////////////////////////////
@@ -229,11 +239,25 @@ int main() {
     return 1;
   }
   compute_acc(Natoms, coord, mass, distance, acceleration, epsilon, sigma);
+
+
+   FILE* output_file = fopen("trajectory.xyz", "w");
+   if (output_file == NULL) {
+     fprintf(stderr, "Failed to open trajectory file for writing\n");
+     free_2d(coord);
+     free_2d(distance);
+     free(mass);
+     free_2d(velocity);
+     free_2d(acceleration);
+     return 1;
+   }
+
   
   //Verlet algorithm
   double dt = 0.2;
   size_t nsteps = 1000;
   printf("\n\n*****Beginning molecular dynamics simulation based on the Verlet algorithm*****\n\n");
+  size_t M = 10;
   for (size_t n = 0; n < nsteps; n++){
     for (size_t i = 0; i < Natoms; i++){
       for (size_t j = 0; j < 3; j++){
@@ -251,6 +275,12 @@ int main() {
     double total_V = V(epsilon, sigma, Natoms, distance);
     double total_T = T(Natoms, velocity, mass);
     double total_E = E(total_V, total_T);
+
+
+    //Write trajectory every M steps
+    if (n % M == 0) {
+      write_xyz(output_file, Natoms, coord, total_V, total_T, total_E);
+    }
    
     printf("\nIteration: %zu", n+1);  // to print starting at 1
     printf("\nEnergies: \n   Potential %lf J/mol", total_V);
@@ -264,6 +294,10 @@ int main() {
     printf("\n"); 
     }
   }
+
+  fclose(output_file);
+
+
 
   // Free allocated memory
   free_2d(coord);
