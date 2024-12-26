@@ -164,11 +164,11 @@ int main() {
     printf("Failed to open file");
     return 1;  // exit with error if no file found
   }
-  printf("Molecule data from %s:\n", filename);
+  printf("Reading molecular data from: %s\n", filename);
 
   //Read the number of atoms
   size_t Natoms = read_Natoms(input_file); 
-  printf("Number of atoms: %zu\n", Natoms);
+  //printf("Number of atoms: %zu\n", Natoms);
 
 
   //Allocate memory for coords and masses
@@ -182,9 +182,9 @@ int main() {
   
   //Read molecule data
   read_molecule(input_file, Natoms, coord, mass);
-  for (size_t i = 0; i < Natoms; i++) {
-    printf("Atom %zu: x = %.1lf, y = %.1lf, z = %.1lf, mass = %.3lf\n", i + 1, coord[i][0], coord[i][1], coord[i][2], mass[i]);
-  }
+  //for (size_t i = 0; i < Natoms; i++) {
+  //  printf("Atom %zu: x = %.1lf, y = %.1lf, z = %.1lf, mass = %.3lf\n", i + 1, coord[i][0], coord[i][1], coord[i][2], mass[i]);
+  //}
 
   fclose(input_file);
 
@@ -201,18 +201,18 @@ int main() {
 
   //Compute and print the distances
   compute_distances(Natoms, coord, distance);
-  printf("\nInternuclear distances:\n");
-  for (size_t i = 0; i < Natoms; i++) {
-    for (size_t j = 0; j < Natoms; j++) {
-      printf("Interatomic distance[%zu][%zu] = %lf\n", i, j, distance[i][j]);  // %lf to print double
-    }
-  }
+  //printf("\nInternuclear distances:\n");
+  //for (size_t i = 0; i < Natoms; i++) {
+  //  for (size_t j = 0; j < Natoms; j++) {
+  //    printf("Interatomic distance[%zu][%zu] = %lf\n", i, j, distance[i][j]);  // %lf to print double
+  //  }
+  //}
 
   //Compute and print LJ potential energy
   double epsilon = 0.0661;
   double sigma = 0.3345;
   double total_V = V(epsilon, sigma, Natoms, distance);
-  printf("\nTotal potential energy: %lf J/mol\n", total_V);
+  //printf("\nTotal potential energy: %lf J/mol\n", total_V);
 
   //Compute and print kinetic energy
   double** velocity = malloc_2d(Natoms, 3);
@@ -222,12 +222,12 @@ int main() {
     }
   }  // initialize velocities to 0
   double total_T = T(Natoms, velocity, mass);
-  printf("Total kinetic energy: %lf J/mol\n", total_T);
+  //printf("Total kinetic energy: %lf J/mol\n", total_T);
   
 
   //Compute and print total energy
   double total_E = E(total_V, total_T);
-  printf("Total energy: %lf J/mol\n", total_E);
+  //printf("Total energy: %lf J/mol\n", total_E);
 
 
 
@@ -259,7 +259,7 @@ int main() {
   //Verlet algorithm
   double dt = 0.2;
   size_t nsteps = 1000;
-  printf("\n\n*****Beginning molecular dynamics simulation based on the Verlet algorithm*****\n\n");
+  //printf("\n\n*****Beginning molecular dynamics simulation based on the Verlet algorithm*****\n\n");
   size_t M = 10; //To print trajectory every M numbers of steps 
   for (size_t n = 0; n < nsteps; n++){
     for (size_t i = 0; i < Natoms; i++){
@@ -285,22 +285,22 @@ int main() {
       write_xyz(output_file, Natoms, coord, total_V, total_T, total_E);
     }
    
-    printf("\nIteration: %zu", n+1);  // to print starting at 1
-    printf("\nEnergies: \n   Potential %lf J/mol", total_V);
-    printf("\n   Kinetic %lf J/mol", total_T);
-    printf("\n   Total %lf J/mol", total_E);
-    printf("\nCoordinates:\n");
-    for (size_t i = 0; i < Natoms; i++) {
-      for (size_t j = 0; j < 3; j++) {
-        printf("%lf ", coord[i][j]);  // %lf to print double
-      } 
-    printf("\n"); 
-    }
+    //printf("\nIteration: %zu", n+1);  // to print starting at 1
+    //printf("\nEnergies: \n   Potential %lf J/mol", total_V);
+    //printf("\n   Kinetic %lf J/mol", total_T);
+    //printf("\n   Total %lf J/mol", total_E);
+    //printf("\nCoordinates:\n");
+    //for (size_t i = 0; i < Natoms; i++) {
+    //  for (size_t j = 0; j < 3; j++) {
+    //    printf("%lf ", coord[i][j]);  // %lf to print double
+    //  } 
+    //printf("\n"); 
+    //}
   }
 
   fclose(output_file);
 
-
+  printf("An output file has been created: %s \n", filename_out);
 
   // Free allocated memory
   free_2d(coord);
