@@ -5,8 +5,10 @@ gcc md_simulation.c -o md_simulation -lm
 # Check if compilation succeeded
 if [ $? -eq 0 ]; then
     echo "Compilation successful. Running the program..."
+    echo "Creating a file with all energies"
         # Execute the program
 	 ./md_simulation.exe
+	 ./extract_energies.sh
 else
 	echo "Compilation failed."
 fi

@@ -3,8 +3,9 @@
 #include <math.h>
 
 //Give names of input and output files
-const char* filename = "inp.txt";
-const char* filename_out = "trajectory.xyz";
+//const char* filename = "inp.txt";
+const char* filename = "tests/test-6.txt";
+const char* filename_out = "trajectory-6.xyz";
 
 //Function to allocate 2D arrays
 double** malloc_2d(size_t m, size_t n) {
@@ -146,7 +147,8 @@ void compute_acc(size_t Natoms, double** coord, double* mass, double** distance,
 
 
 
-void write_xyz(FILE* output_file, size_t Natoms, double** coord, double potential_energy, double kinetic_energy, double total_energy) {
+void write_xyz(FILE* output_file, size_t Natoms, double** coord, double potential_energy, double kinetic_energy, double total_energy, size_t iteration) {
+  fprintf(output_file, "Iteration: %zu\n", iteration);
   fprintf(output_file, "%zu\n", Natoms);
   fprintf(output_file, "Potential Energy: %lf, Kinetic Energy: %lf, Total Energy: %lf\n", potential_energy, kinetic_energy, total_energy);
   for (size_t i = 0; i < Natoms; i++) {
@@ -282,7 +284,7 @@ int main() {
 
  //Write trajectory every M steps
     if (n % M == 0) {
-      write_xyz(output_file, Natoms, coord, total_V, total_T, total_E);
+      write_xyz(output_file, Natoms, coord, total_V, total_T, total_E, n/M);
     }
    
     //printf("\nIteration: %zu", n+1);  // to print starting at 1
