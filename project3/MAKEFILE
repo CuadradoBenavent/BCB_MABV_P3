@@ -1,0 +1,13 @@
+#!/bin/bash
+#Compile the C code
+gcc md_simulation.c -o md_simulation -lm
+
+# Check if compilation succeeded
+if [ $? -eq 0 ]; then
+    echo "Compilation successful. Running the program..."
+        # Execute the program
+	 ./md_simulation.exe
+else
+	echo "Compilation failed."
+fi
+
