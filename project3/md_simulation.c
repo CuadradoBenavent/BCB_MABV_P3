@@ -2,10 +2,6 @@
 #include <stdlib.h>
 #include <math.h>
 
-//Give names of input and output files
-//const char* filename = "inp.txt";
-const char* filename = "tests/test-6.txt";
-const char* filename_out = "trajectory-6.xyz";
 
 //Function to allocate 2D arrays
 double** malloc_2d(size_t m, size_t n) {
@@ -159,11 +155,22 @@ void write_xyz(FILE* output_file, size_t Natoms, double** coord, double potentia
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 
-int main() {
+int main(int argc, char* argv[]) {
 
+
+  // Check if arguments provided
+  if (argc < 5) {
+      fprintf(stderr, "Add arguments when executing, example: --input input.txt --output trajectory.xyz \n");
+      return 1;
+  }
+
+  const char* filename = argv[2];
+  const char* filename_out = argv[4];
+  
+  
   FILE* input_file = fopen(filename, "r");  // open inp.txt for reading
   if (input_file == NULL) {
-    printf("Failed to open file");
+    printf("Failed to open file\n");
     return 1;  // exit with error if no file found
   }
   printf("Reading molecular data from: %s\n", filename);
