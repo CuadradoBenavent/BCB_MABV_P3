@@ -1,14 +1,25 @@
 #!/bin/bash
+
+# Define input and output files
+
+input_file="inp.txt"
+output_trajectory_file="trajectory.xyz"
+output_energy_file="energy.dat"
+
 #Compile the C code
 gcc md_simulation.c -o md_simulation.exe -lm
 
 # Check if compilation succeeded
 if [ $? -eq 0 ]; then
     echo "Compilation successful. Running the program..."
-    echo "Creating a file with all energies"
-        # Execute the program
-	 ./md_simulation.exe
-	 ./extract_energies.sh
+    # Execute the program
+    ./md_simulation.exe --input $input_file --output $output_trajectory_file
+
+    # Extract energies
+    echo "Creating a file with all energies..."
+    awk 'BEGIN{print "Iteration", "Potential Energy", "Kinetic Energy", "Total Energy"} /Iteration:/ {iteration = $2} /Potential/ {print iteration, $3, $6, $9}' $output_trajectory_file > $output_energy_file
+    echo "Energies extracted and saved to $output_energy_file"
+
 else
 	echo "Compilation failed."
 fi
