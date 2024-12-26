@@ -2,8 +2,11 @@
 #include <stdlib.h>
 #include <math.h>
 
+//Give names of input and output files
+const char* filename = "inp.txt";
+const char* filename_out = "trajectory.xyz";
 
-//Functio to allocate 2D arrays
+//Function to allocate 2D arrays
 double** malloc_2d(size_t m, size_t n) {
  
   // Allocate an array of double pointers with size m
@@ -155,7 +158,7 @@ void write_xyz(FILE* output_file, size_t Natoms, double** coord, double potentia
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 int main() {
-  const char* filename = "inp.txt";
+
   FILE* input_file = fopen(filename, "r");  // open inp.txt for reading
   if (input_file == NULL) {
     printf("Failed to open file");
@@ -240,8 +243,8 @@ int main() {
   }
   compute_acc(Natoms, coord, mass, distance, acceleration, epsilon, sigma);
 
-
-   FILE* output_file = fopen("trajectory.xyz", "w");
+   //Define output file
+   FILE* output_file = fopen(filename_out, "w");
    if (output_file == NULL) {
      fprintf(stderr, "Failed to open trajectory file for writing\n");
      free_2d(coord);
@@ -257,7 +260,7 @@ int main() {
   double dt = 0.2;
   size_t nsteps = 1000;
   printf("\n\n*****Beginning molecular dynamics simulation based on the Verlet algorithm*****\n\n");
-  size_t M = 10;
+  size_t M = 10; //To print trajectory every M numbers of steps 
   for (size_t n = 0; n < nsteps; n++){
     for (size_t i = 0; i < Natoms; i++){
       for (size_t j = 0; j < 3; j++){
@@ -277,7 +280,7 @@ int main() {
     double total_E = E(total_V, total_T);
 
 
-    //Write trajectory every M steps
+ //Write trajectory every M steps
     if (n % M == 0) {
       write_xyz(output_file, Natoms, coord, total_V, total_T, total_E);
     }
