@@ -1,6 +1,6 @@
 #!/bin/bash
 #Compile the C code
-gcc md_simulation.c -o md_simulation -lm
+gcc md_simulation.c -o md_simulation.exe -lm
 
 # Check if compilation succeeded
 if [ $? -eq 0 ]; then
