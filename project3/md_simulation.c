@@ -144,9 +144,8 @@ void compute_acc(size_t Natoms, double** coord, double* mass, double** distance,
 
 
 void write_xyz(FILE* output_file, size_t Natoms, double** coord, double potential_energy, double kinetic_energy, double total_energy, size_t iteration) {
-  fprintf(output_file, "Iteration: %zu\n", iteration);
   fprintf(output_file, "%zu\n", Natoms);
-  fprintf(output_file, "Potential Energy: %lf, Kinetic Energy: %lf, Total Energy: %lf\n", potential_energy, kinetic_energy, total_energy);
+  fprintf(output_file,"Iteration: %zu, Potential Energy: %lf, Kinetic Energy: %lf, Total Energy: %lf\n", iteration, potential_energy, kinetic_energy, total_energy);
   for (size_t i = 0; i < Natoms; i++) {
     fprintf(output_file, "Ar %lf %lf %lf\n", coord[i][0], coord[i][1], coord[i][2]);
   }
