@@ -2,18 +2,18 @@
 
 # Define input and output files
 
-input_file="inp.txt"
-output_trajectory_file="trajectory.xyz"
-output_energy_file="energy.dat"
+input_file="tests/inp.txt"
+output_trajectory_file="tests/trajectory.xyz"
+output_energy_file="tests/energy.dat"
 
 #Compile the C code
-gcc md_simulation.c -o md_simulation.exe -lm
+gcc ./src/md_simulation.c -o ./bin/md_simulation.exe -lm
 
 # Check if compilation succeeded
 if [ $? -eq 0 ]; then
     echo "Compilation successful. Running the program..."
     # Execute the program
-    ./md_simulation.exe --input $input_file --output $output_trajectory_file
+    ./bin/md_simulation.exe --input $input_file --output $output_trajectory_file
 
     # Extract energies
     echo "Creating a file with all energies..."
