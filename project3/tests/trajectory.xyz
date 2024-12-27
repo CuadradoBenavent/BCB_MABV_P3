@@ -1,0 +1,500 @@
+3
+Iteration: 0. Potential Energy: -0.034949, Kinetic Energy: 0.000045, Total Energy: -0.034904
+Ar 0.000012 0.000025 0.000055
+Ar 0.000000 0.000000 0.499882
+Ar 0.099988 0.199975 -0.499938
+3
+Iteration: 1. Potential Energy: -0.041213, Kinetic Energy: 0.006316, Total Energy: -0.034897
+Ar 0.001485 0.002971 0.007233
+Ar 0.000019 0.000038 0.485152
+Ar 0.098496 0.196991 -0.492385
+3
+Iteration: 2. Potential Energy: -0.071050, Kinetic Energy: 0.036124, Total Energy: -0.034926
+Ar 0.005307 0.010615 0.032936
+Ar 0.000188 0.000375 0.438854
+Ar 0.094505 0.189010 -0.471791
+3
+Iteration: 3. Potential Energy: -0.087751, Kinetic Energy: 0.052347, Total Energy: -0.035405
+Ar 0.012145 0.024291 0.034161
+Ar -0.000260 -0.000521 0.403247
+Ar 0.088115 0.176230 -0.437408
+3
+Iteration: 4. Potential Energy: -0.084340, Kinetic Energy: 0.047915, Total Energy: -0.036426
+Ar 0.024065 0.048129 -0.045652
+Ar -0.001884 -0.003768 0.424410
+Ar 0.077819 0.155638 -0.378758
+3
+Iteration: 5. Potential Energy: -0.097649, Kinetic Energy: 0.062776, Total Energy: -0.034873
+Ar 0.019024 0.038048 0.004912
+Ar -0.001586 -0.003172 0.409121
+Ar 0.082562 0.165123 -0.414034
+3
+Iteration: 6. Potential Energy: -0.084366, Kinetic Energy: 0.048986, Total Energy: -0.035380
+Ar 0.013839 0.027677 0.039401
+Ar -0.001935 -0.003869 0.413336
+Ar 0.088096 0.176192 -0.452737
+3
+Iteration: 7. Potential Energy: -0.049515, Kinetic Energy: 0.014630, Total Energy: -0.034885
+Ar 0.014224 0.028448 -0.002452
+Ar -0.004854 -0.009707 0.473972
+Ar 0.090629 0.181259 -0.471519
+3
+Iteration: 8. Potential Energy: -0.047280, Kinetic Energy: 0.012396, Total Energy: -0.034884
+Ar 0.017063 0.034126 -0.036358
+Ar -0.006506 -0.013012 0.503689
+Ar 0.089443 0.178886 -0.467331
+3
+Iteration: 9. Potential Energy: -0.070860, Kinetic Energy: 0.035258, Total Energy: -0.035602
+Ar 0.024862 0.049725 -0.088847
+Ar -0.007493 -0.014986 0.518380
+Ar 0.082631 0.165262 -0.429532
+3
+Iteration: 10. Potential Energy: -0.062362, Kinetic Energy: 0.027460, Total Energy: -0.034902
+Ar 0.021470 0.042941 -0.070283
+Ar -0.008080 -0.016160 0.525468
+Ar 0.086609 0.173219 -0.455185
+3
+Iteration: 11. Potential Energy: -0.038415, Kinetic Energy: 0.003517, Total Energy: -0.034898
+Ar 0.016705 0.033410 -0.038398
+Ar -0.008273 -0.016547 0.524805
+Ar 0.091568 0.183137 -0.486407
+3
+Iteration: 12. Potential Energy: -0.037617, Kinetic Energy: 0.002714, Total Energy: -0.034903
+Ar 0.016347 0.032693 -0.024901
+Ar -0.007962 -0.015924 0.513062
+Ar 0.091615 0.183231 -0.488161
+3
+Iteration: 13. Potential Energy: -0.049698, Kinetic Energy: 0.014804, Total Energy: -0.034894
+Ar 0.019312 0.038624 -0.021349
+Ar -0.006957 -0.013914 0.486405
+Ar 0.087645 0.175289 -0.465055
+3
+Iteration: 14. Potential Energy: -0.090118, Kinetic Energy: 0.055164, Total Energy: -0.034954
+Ar 0.026082 0.052164 -0.029125
+Ar -0.004819 -0.009638 0.438626
+Ar 0.078737 0.157473 -0.409501
+3
+Iteration: 15. Potential Energy: -0.130593, Kinetic Energy: 0.093261, Total Energy: -0.037333
+Ar 0.030229 0.060458 0.002676
+Ar -0.000442 -0.000885 0.358234
+Ar 0.070213 0.140427 -0.360910
+3
+Iteration: 16. Potential Energy: -0.091920, Kinetic Energy: 0.056851, Total Energy: -0.035069
+Ar 0.038839 0.077679 -0.026960
+Ar -0.007286 -0.014572 0.397525
+Ar 0.068446 0.136893 -0.370565
+3
+Iteration: 17. Potential Energy: -0.065419, Kinetic Energy: 0.030550, Total Energy: -0.034869
+Ar 0.041905 0.083810 -0.000731
+Ar -0.014988 -0.029976 0.451704
+Ar 0.073083 0.146166 -0.450973
+3
+Iteration: 18. Potential Energy: -0.046476, Kinetic Energy: 0.011588, Total Energy: -0.034887
+Ar 0.043213 0.086425 0.025305
+Ar -0.018638 -0.037276 0.473346
+Ar 0.075425 0.150851 -0.498651
+3
+Iteration: 19. Potential Energy: -0.059836, Kinetic Energy: 0.024955, Total Energy: -0.034881
+Ar 0.041082 0.082165 0.066623
+Ar -0.017733 -0.035466 0.461989
+Ar 0.076651 0.153301 -0.528612
+3
+Iteration: 20. Potential Energy: -0.059553, Kinetic Energy: 0.024059, Total Energy: -0.035494
+Ar 0.038409 0.076818 0.108704
+Ar -0.015800 -0.031600 0.441919
+Ar 0.077391 0.154782 -0.550623
+3
+Iteration: 21. Potential Energy: -0.043881, Kinetic Energy: 0.008999, Total Energy: -0.034882
+Ar 0.047131 0.094261 0.076355
+Ar -0.025006 -0.050012 0.491958
+Ar 0.077875 0.155751 -0.568313
+3
+Iteration: 22. Potential Energy: -0.036411, Kinetic Energy: 0.001519, Total Energy: -0.034893
+Ar 0.049838 0.099675 0.075582
+Ar -0.027977 -0.055954 0.505986
+Ar 0.078139 0.156278 -0.581568
+3
+Iteration: 23. Potential Energy: -0.056596, Kinetic Energy: 0.021707, Total Energy: -0.034889
+Ar 0.046618 0.093235 0.104656
+Ar -0.024842 -0.049684 0.486209
+Ar 0.078225 0.156449 -0.590865
+3
+Iteration: 24. Potential Energy: -0.061279, Kinetic Energy: 0.025707, Total Energy: -0.035572
+Ar 0.042997 0.085995 0.134772
+Ar -0.021176 -0.042352 0.462621
+Ar 0.078179 0.156358 -0.597393
+3
+Iteration: 25. Potential Energy: -0.041210, Kinetic Energy: 0.006328, Total Energy: -0.034883
+Ar 0.052209 0.104418 0.096846
+Ar -0.030238 -0.060475 0.504943
+Ar 0.078029 0.156057 -0.601789
+3
+Iteration: 26. Potential Energy: -0.035824, Kinetic Energy: 0.000932, Total Energy: -0.034892
+Ar 0.054366 0.108732 0.091799
+Ar -0.032140 -0.064281 0.511749
+Ar 0.077775 0.155549 -0.603548
+3
+Iteration: 27. Potential Energy: -0.059920, Kinetic Energy: 0.025004, Total Energy: -0.034916
+Ar 0.049686 0.099373 0.117733
+Ar -0.027107 -0.054215 0.484845
+Ar 0.077421 0.154842 -0.602578
+3
+Iteration: 28. Potential Energy: -0.067378, Kinetic Energy: 0.031923, Total Energy: -0.035454
+Ar 0.046809 0.093617 0.133771
+Ar -0.023786 -0.047571 0.465630
+Ar 0.076977 0.153954 -0.599401
+3
+Iteration: 29. Potential Energy: -0.039918, Kinetic Energy: 0.005032, Total Energy: -0.034885
+Ar 0.055513 0.111027 0.093345
+Ar -0.031957 -0.063914 0.500781
+Ar 0.076444 0.152887 -0.594126
+3
+Iteration: 30. Potential Energy: -0.037131, Kinetic Energy: 0.002239, Total Energy: -0.034891
+Ar 0.056753 0.113506 0.085246
+Ar -0.032565 -0.065130 0.500622
+Ar 0.075812 0.151624 -0.585868
+3
+Iteration: 31. Potential Energy: -0.064164, Kinetic Energy: 0.029205, Total Energy: -0.034959
+Ar 0.050841 0.101682 0.107502
+Ar -0.025912 -0.051824 0.466615
+Ar 0.075071 0.150141 -0.574117
+3
+Iteration: 32. Potential Energy: -0.070395, Kinetic Energy: 0.035120, Total Energy: -0.035275
+Ar 0.048597 0.097193 0.109631
+Ar -0.022803 -0.045606 0.449506
+Ar 0.074207 0.148413 -0.559137
+3
+Iteration: 33. Potential Energy: -0.042646, Kinetic Energy: 0.007760, Total Energy: -0.034886
+Ar 0.055998 0.111997 0.063277
+Ar -0.029187 -0.058374 0.476930
+Ar 0.073188 0.146377 -0.540207
+3
+Iteration: 34. Potential Energy: -0.043417, Kinetic Energy: 0.008525, Total Energy: -0.034892
+Ar 0.056414 0.112827 0.044684
+Ar -0.028361 -0.056722 0.469266
+Ar 0.071948 0.143895 -0.513949
+3
+Iteration: 35. Potential Energy: -0.070334, Kinetic Energy: 0.035444, Total Energy: -0.034890
+Ar 0.050653 0.101305 0.047027
+Ar -0.020995 -0.041989 0.428615
+Ar 0.070342 0.140684 -0.475641
+3
+Iteration: 36. Potential Energy: -0.090272, Kinetic Energy: 0.055017, Total Energy: -0.035254
+Ar 0.043257 0.086515 0.042055
+Ar -0.011246 -0.022492 0.377045
+Ar 0.067988 0.135977 -0.419100
+3
+Iteration: 37. Potential Energy: -0.089322, Kinetic Energy: 0.052183, Total Energy: -0.037139
+Ar 0.045609 0.091219 -0.019877
+Ar -0.011298 -0.022595 0.382157
+Ar 0.065688 0.131377 -0.362280
+3
+Iteration: 38. Potential Energy: -0.089831, Kinetic Energy: 0.054104, Total Energy: -0.035727
+Ar 0.040920 0.081840 0.043872
+Ar -0.011263 -0.022526 0.385109
+Ar 0.070343 0.140685 -0.428981
+3
+Iteration: 39. Potential Energy: -0.057614, Kinetic Energy: 0.022739, Total Energy: -0.034874
+Ar 0.048351 0.096702 0.008178
+Ar -0.021352 -0.042705 0.455372
+Ar 0.073002 0.146003 -0.463551
+3
+Iteration: 40. Potential Energy: -0.054065, Kinetic Energy: 0.019191, Total Energy: -0.034874
+Ar 0.052891 0.105783 -0.029796
+Ar -0.026857 -0.053714 0.496022
+Ar 0.073965 0.147931 -0.466226
+3
+Iteration: 41. Potential Energy: -0.044589, Kinetic Energy: 0.009909, Total Energy: -0.034680
+Ar 0.057219 0.114438 -0.090004
+Ar -0.030434 -0.060869 0.523941
+Ar 0.073215 0.146431 -0.433936
+3
+Iteration: 42. Potential Energy: -0.052960, Kinetic Energy: 0.018080, Total Energy: -0.034879
+Ar 0.056910 0.113821 -0.061306
+Ar -0.033230 -0.066461 0.546422
+Ar 0.076320 0.152640 -0.485116
+3
+Iteration: 43. Potential Energy: -0.036870, Kinetic Energy: 0.001974, Total Energy: -0.034896
+Ar 0.056995 0.113990 -0.051242
+Ar -0.035349 -0.070697 0.564275
+Ar 0.078354 0.156707 -0.513034
+3
+Iteration: 44. Potential Energy: -0.047602, Kinetic Energy: 0.012723, Total Energy: -0.034878
+Ar 0.058141 0.116282 -0.073246
+Ar -0.036841 -0.073681 0.577911
+Ar 0.078700 0.157399 -0.504665
+3
+Iteration: 45. Potential Energy: -0.035145, Kinetic Energy: 0.000914, Total Energy: -0.034231
+Ar 0.060343 0.120685 -0.123681
+Ar -0.037898 -0.075797 0.588546
+Ar 0.077556 0.155112 -0.464864
+3
+Iteration: 46. Potential Energy: -0.047762, Kinetic Energy: 0.012884, Total Energy: -0.034878
+Ar 0.057841 0.115682 -0.084303
+Ar -0.038683 -0.077367 0.597203
+Ar 0.080842 0.161684 -0.512900
+3
+Iteration: 47. Potential Energy: -0.035155, Kinetic Energy: 0.000260, Total Energy: -0.034896
+Ar 0.056629 0.113258 -0.071950
+Ar -0.039158 -0.078317 0.603646
+Ar 0.082529 0.165059 -0.531696
+3
+Iteration: 48. Potential Energy: -0.050943, Kinetic Energy: 0.016064, Total Energy: -0.034879
+Ar 0.057153 0.114306 -0.093797
+Ar -0.039306 -0.078612 0.607757
+Ar 0.082153 0.164305 -0.513960
+3
+Iteration: 49. Potential Energy: -0.044359, Kinetic Energy: 0.009377, Total Energy: -0.034982
+Ar 0.058512 0.117025 -0.133149
+Ar -0.039197 -0.078395 0.609990
+Ar 0.080685 0.161370 -0.476841
+3
+Iteration: 50. Potential Energy: -0.043582, Kinetic Energy: 0.008700, Total Energy: -0.034881
+Ar 0.054378 0.108757 -0.087720
+Ar -0.038892 -0.077784 0.610723
+Ar 0.084514 0.169027 -0.523003
+3
+Iteration: 51. Potential Energy: -0.035405, Kinetic Energy: 0.000510, Total Energy: -0.034895
+Ar 0.052514 0.105028 -0.076678
+Ar -0.038329 -0.076657 0.609506
+Ar 0.085815 0.171629 -0.532827
+3
+Iteration: 52. Potential Energy: -0.056642, Kinetic Energy: 0.021747, Total Energy: -0.034896
+Ar 0.053050 0.106100 -0.100171
+Ar -0.037477 -0.074954 0.606096
+Ar 0.084427 0.168855 -0.505925
+3
+Iteration: 53. Potential Energy: -0.062562, Kinetic Energy: 0.026999, Total Energy: -0.035563
+Ar 0.053350 0.106700 -0.123687
+Ar -0.036386 -0.072771 0.600803
+Ar 0.083035 0.166071 -0.477115
+3
+Iteration: 54. Potential Energy: -0.041270, Kinetic Energy: 0.006384, Total Energy: -0.034886
+Ar 0.047876 0.095751 -0.077231
+Ar -0.035072 -0.070144 0.593711
+Ar 0.087196 0.174393 -0.516480
+3
+Iteration: 55. Potential Energy: -0.037140, Kinetic Energy: 0.002246, Total Energy: -0.034894
+Ar 0.045512 0.091024 -0.066566
+Ar -0.033428 -0.066855 0.583931
+Ar 0.087915 0.175831 -0.517364
+3
+Iteration: 56. Potential Energy: -0.062680, Kinetic Energy: 0.027743, Total Energy: -0.034937
+Ar 0.046224 0.092447 -0.089441
+Ar -0.031383 -0.062766 0.570839
+Ar 0.085159 0.170319 -0.481398
+3
+Iteration: 57. Potential Energy: -0.070001, Kinetic Energy: 0.034639, Total Energy: -0.035362
+Ar 0.045133 0.090266 -0.096842
+Ar -0.028971 -0.057941 0.554612
+Ar 0.083838 0.167675 -0.457770
+3
+Iteration: 58. Potential Energy: -0.043849, Kinetic Energy: 0.008962, Total Energy: -0.034887
+Ar 0.038180 0.076359 -0.047621
+Ar -0.026121 -0.052242 0.534530
+Ar 0.087941 0.175883 -0.486908
+3
+Iteration: 59. Potential Energy: -0.044527, Kinetic Energy: 0.009633, Total Energy: -0.034894
+Ar 0.034667 0.069334 -0.028658
+Ar -0.022440 -0.044880 0.506895
+Ar 0.087773 0.175546 -0.478237
+3
+Iteration: 60. Potential Energy: -0.070890, Kinetic Energy: 0.036005, Total Energy: -0.034885
+Ar 0.033882 0.067763 -0.031456
+Ar -0.017368 -0.034737 0.466189
+Ar 0.083487 0.166974 -0.434733
+3
+Iteration: 61. Potential Energy: -0.090941, Kinetic Energy: 0.056003, Total Energy: -0.034939
+Ar 0.033279 0.066557 -0.033006
+Ar -0.010138 -0.020277 0.404529
+Ar 0.076860 0.153720 -0.371523
+3
+Iteration: 62. Potential Energy: -0.129584, Kinetic Energy: 0.092749, Total Energy: -0.036835
+Ar 0.026698 0.053396 0.004504
+Ar -0.004504 -0.009009 0.363018
+Ar 0.077807 0.155613 -0.367522
+3
+Iteration: 63. Potential Energy: -0.094139, Kinetic Energy: 0.059101, Total Energy: -0.035038
+Ar 0.024126 0.048252 -0.029582
+Ar -0.008722 -0.017445 0.429824
+Ar 0.084596 0.169193 -0.400242
+3
+Iteration: 64. Potential Energy: -0.054953, Kinetic Energy: 0.020066, Total Energy: -0.034887
+Ar 0.014798 0.029596 0.001514
+Ar -0.010326 -0.020651 0.460820
+Ar 0.095527 0.191055 -0.462334
+3
+Iteration: 65. Potential Energy: -0.063106, Kinetic Energy: 0.028210, Total Energy: -0.034896
+Ar 0.007621 0.015241 0.044741
+Ar -0.009924 -0.019848 0.455465
+Ar 0.102303 0.204607 -0.500207
+3
+Iteration: 66. Potential Energy: -0.062445, Kinetic Energy: 0.026986, Total Energy: -0.035459
+Ar 0.001397 0.002795 0.086404
+Ar -0.008892 -0.017785 0.442485
+Ar 0.107495 0.214990 -0.528889
+3
+Iteration: 67. Potential Energy: -0.044829, Kinetic Energy: 0.009935, Total Energy: -0.034894
+Ar -0.001847 -0.003695 0.055665
+Ar -0.010104 -0.020207 0.497618
+Ar 0.111951 0.223902 -0.553283
+3
+Iteration: 68. Potential Energy: -0.040049, Kinetic Energy: 0.005150, Total Energy: -0.034899
+Ar -0.005184 -0.010367 0.061328
+Ar -0.010549 -0.021098 0.512672
+Ar 0.115733 0.231465 -0.573999
+3
+Iteration: 69. Potential Energy: -0.067545, Kinetic Energy: 0.032414, Total Energy: -0.035131
+Ar -0.008491 -0.016982 0.104669
+Ar -0.010509 -0.021019 0.487300
+Ar 0.119001 0.238001 -0.591968
+3
+Iteration: 70. Potential Energy: -0.065443, Kinetic Energy: 0.030400, Total Energy: -0.035043
+Ar -0.011579 -0.023158 0.109546
+Ar -0.010392 -0.020783 0.498740
+Ar 0.121971 0.243941 -0.608286
+3
+Iteration: 71. Potential Energy: -0.037927, Kinetic Energy: 0.003027, Total Energy: -0.034900
+Ar -0.014285 -0.028571 0.085439
+Ar -0.010424 -0.020847 0.537893
+Ar 0.124709 0.249418 -0.623332
+3
+Iteration: 72. Potential Energy: -0.044203, Kinetic Energy: 0.009312, Total Energy: -0.034890
+Ar -0.016425 -0.032850 0.100436
+Ar -0.010785 -0.021569 0.536697
+Ar 0.127210 0.254419 -0.637133
+3
+Iteration: 73. Potential Energy: -0.043194, Kinetic Energy: 0.008333, Total Energy: -0.034862
+Ar -0.017922 -0.035845 0.151562
+Ar -0.011603 -0.023206 0.498399
+Ar 0.129525 0.259051 -0.649961
+3
+Iteration: 74. Potential Energy: -0.050148, Kinetic Energy: 0.015259, Total Energy: -0.034889
+Ar -0.020869 -0.041737 0.120123
+Ar -0.010851 -0.021702 0.541997
+Ar 0.131720 0.263439 -0.662119
+3
+Iteration: 75. Potential Energy: -0.036113, Kinetic Energy: 0.001211, Total Energy: -0.034902
+Ar -0.023116 -0.046232 0.109678
+Ar -0.010675 -0.021351 0.563951
+Ar 0.133791 0.267583 -0.673629
+3
+Iteration: 76. Potential Energy: -0.056316, Kinetic Energy: 0.021406, Total Energy: -0.034911
+Ar -0.024161 -0.048323 0.138328
+Ar -0.011582 -0.023164 0.546195
+Ar 0.135743 0.271487 -0.684523
+3
+Iteration: 77. Potential Energy: -0.062049, Kinetic Energy: 0.026538, Total Energy: -0.035511
+Ar -0.025200 -0.050400 0.167552
+Ar -0.012406 -0.024813 0.527390
+Ar 0.137606 0.275213 -0.694943
+3
+Iteration: 78. Potential Energy: -0.040036, Kinetic Energy: 0.005141, Total Energy: -0.034895
+Ar -0.028376 -0.056752 0.131146
+Ar -0.011023 -0.022047 0.573838
+Ar 0.139400 0.278799 -0.704984
+3
+Iteration: 79. Potential Energy: -0.038886, Kinetic Energy: 0.003990, Total Energy: -0.034896
+Ar -0.029899 -0.059798 0.134767
+Ar -0.011218 -0.022435 0.579861
+Ar 0.141117 0.282233 -0.714629
+3
+Iteration: 80. Potential Energy: -0.065613, Kinetic Energy: 0.030209, Total Energy: -0.035403
+Ar -0.029647 -0.059295 0.178705
+Ar -0.013117 -0.026234 0.545214
+Ar 0.142764 0.285529 -0.723919
+3
+Iteration: 81. Potential Energy: -0.058924, Kinetic Energy: 0.023987, Total Energy: -0.034936
+Ar -0.031986 -0.063972 0.166462
+Ar -0.012376 -0.024752 0.566474
+Ar 0.144362 0.288724 -0.732936
+3
+Iteration: 82. Potential Energy: -0.035862, Kinetic Energy: 0.000961, Total Energy: -0.034901
+Ar -0.034612 -0.069224 0.145147
+Ar -0.011300 -0.022599 0.596550
+Ar 0.145911 0.291823 -0.741697
+3
+Iteration: 83. Potential Energy: -0.047540, Kinetic Energy: 0.012652, Total Energy: -0.034888
+Ar -0.035142 -0.070284 0.163285
+Ar -0.012268 -0.024536 0.586914
+Ar 0.147410 0.294820 -0.750198
+3
+Iteration: 84. Potential Energy: -0.036623, Kinetic Energy: 0.002191, Total Energy: -0.034433
+Ar -0.034200 -0.068400 0.208302
+Ar -0.014666 -0.029332 0.550175
+Ar 0.148866 0.297732 -0.758477
+3
+Iteration: 85. Potential Energy: -0.044599, Kinetic Energy: 0.009710, Total Energy: -0.034889
+Ar -0.038036 -0.076072 0.168696
+Ar -0.012253 -0.024506 0.597881
+Ar 0.150289 0.300578 -0.766577
+3
+Iteration: 86. Potential Energy: -0.036297, Kinetic Energy: 0.001396, Total Energy: -0.034900
+Ar -0.039782 -0.079564 0.162945
+Ar -0.011895 -0.023789 0.611545
+Ar 0.151676 0.303353 -0.774490
+3
+Iteration: 87. Potential Energy: -0.062836, Kinetic Energy: 0.027827, Total Energy: -0.035010
+Ar -0.039012 -0.078024 0.196939
+Ar -0.014017 -0.028034 0.585286
+Ar 0.153029 0.306058 -0.782225
+3
+Iteration: 88. Potential Energy: -0.066113, Kinetic Energy: 0.030928, Total Energy: -0.035186
+Ar -0.039821 -0.079641 0.207277
+Ar -0.014533 -0.029067 0.582536
+Ar 0.154354 0.308708 -0.789812
+3
+Iteration: 89. Potential Energy: -0.037294, Kinetic Energy: 0.002395, Total Energy: -0.034899
+Ar -0.043297 -0.086594 0.176221
+Ar -0.012357 -0.024714 0.621046
+Ar 0.155654 0.311309 -0.797267
+3
+Iteration: 90. Potential Energy: -0.041656, Kinetic Energy: 0.006764, Total Energy: -0.034892
+Ar -0.043953 -0.087905 0.185280
+Ar -0.012975 -0.025950 0.619304
+Ar 0.156928 0.313856 -0.804584
+3
+Iteration: 91. Potential Energy: -0.049992, Kinetic Energy: 0.014711, Total Energy: -0.035282
+Ar -0.041842 -0.083685 0.232695
+Ar -0.016335 -0.032669 0.579080
+Ar 0.158177 0.316354 -0.811775
+3
+Iteration: 92. Potential Energy: -0.051447, Kinetic Energy: 0.016554, Total Energy: -0.034893
+Ar -0.045402 -0.090804 0.203426
+Ar -0.014005 -0.028011 0.615436
+Ar 0.159407 0.318814 -0.818862
+3
+Iteration: 93. Potential Energy: -0.035336, Kinetic Energy: 0.000434, Total Energy: -0.034902
+Ar -0.047783 -0.095566 0.188752
+Ar -0.012835 -0.025670 0.637093
+Ar 0.160618 0.321235 -0.825845
+3
+Iteration: 94. Potential Energy: -0.053874, Kinetic Energy: 0.018974, Total Energy: -0.034901
+Ar -0.047090 -0.094179 0.213179
+Ar -0.014718 -0.029436 0.619545
+Ar 0.161808 0.323616 -0.832724
+3
+Iteration: 95. Potential Energy: -0.057511, Kinetic Energy: 0.022012, Total Energy: -0.035499
+Ar -0.045880 -0.091761 0.244419
+Ar -0.017100 -0.034201 0.595094
+Ar 0.162981 0.325962 -0.839513
+3
+Iteration: 96. Potential Energy: -0.040324, Kinetic Energy: 0.005431, Total Energy: -0.034894
+Ar -0.050342 -0.100684 0.205680
+Ar -0.013798 -0.027595 0.640542
+Ar 0.164139 0.328279 -0.846222
+3
+Iteration: 97. Potential Energy: -0.037950, Kinetic Energy: 0.003053, Total Energy: -0.034897
+Ar -0.051476 -0.102952 0.206294
+Ar -0.013806 -0.027612 0.646555
+Ar 0.165282 0.330564 -0.852849
+3
+Iteration: 98. Potential Energy: -0.066078, Kinetic Energy: 0.030755, Total Energy: -0.035323
+Ar -0.049161 -0.098322 0.246961
+Ar -0.017248 -0.034497 0.612436
+Ar 0.166410 0.332819 -0.859397
+3
+Iteration: 99. Potential Energy: -0.060122, Kinetic Energy: 0.025165, Total Energy: -0.034957
+Ar -0.051285 -0.102569 0.237386
+Ar -0.016240 -0.032480 0.628492
+Ar 0.167525 0.335049 -0.865878
