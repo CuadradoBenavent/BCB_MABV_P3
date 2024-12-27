@@ -2,9 +2,9 @@ To execute this program:
 
 1) Ensure that the desired input and output files are specified in the MAKEFILE file. Modify section:
 
-    input_file="inp.txt"
-    output_trajectory_file="trajectory.xyz"
-    output_energy_file="energy.dat"
+    input_file="tests/inp.txt"
+    output_trajectory_file="tests/trajectory.xyz"
+    output_energy_file="tests/energy.dat"
 
 
 2) Run:    ./MAKEFILE
