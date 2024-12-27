@@ -17,7 +17,7 @@ if [ $? -eq 0 ]; then
 
     # Extract energies
     echo "Creating a file with all energies..."
-    awk 'BEGIN{print "Iteration", "Potential Energy", "Kinetic Energy", "Total Energy"} /Iteration:/ {iteration = $2} /Potential/ {print iteration, $3, $6, $9}' $output_trajectory_file > $output_energy_file
+    awk 'BEGIN{print "Iteration", "Potential Energy", "Kinetic Energy", "Total Energy"} /Iteration:/ {print $2, $5, $8, $11}' $output_trajectory_file > $output_energy_file
     echo "Energies extracted and saved to $output_energy_file"
 
 else
