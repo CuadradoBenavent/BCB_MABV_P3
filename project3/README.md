@@ -1,4 +1,12 @@
-This program computes the molecular dynamics of n-Argon atoms. 
+This program computes the molecular dynamics of N-Argon atoms.
+
+Molecular Dynamics (MD) simulates the movement of atoms based on their initial positions and velocities.
+In this project, a MD program to illustrate key concepts in MD simulations is developed.
+The program is structured in different functions. First,functions for allocating and freeing two-dimensional arrays are defined.
+Then, the input file is read and the number of atoms and the coordinates are extracted.
+The next step involves the calculation of the Lennard-Jones potential, the kinetic energy, the potential energy and the total energy.
+Next, the acceleration is calculated solving Newton's equations.
+Finally, the MD is implemented using the Verlet algorithm. A final movie can be visualized in software like VMD or Molden.
 
 #####################################################################
 
